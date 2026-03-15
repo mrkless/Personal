@@ -94,13 +94,13 @@ export default function FullWidthTabs() {
   const [certificates, setCertificates] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
- const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-  setIsMobile(window.innerWidth < 768);
-}, []);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
-const initialItems = isMobile ? 4 : 6;
+  const initialItems = isMobile ? 4 : 6;
 
 
   useEffect(() => {

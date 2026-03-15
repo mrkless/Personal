@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Github } from "lucide-react";
 
-const CardProject = ({ Img, Title, Description, id, GithubLink }) => {
+const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => {
   const handleDetails = (e) => {
     if (!id) {
       e.preventDefault();
       alert("Project details are not available.");
     }
   };
+
+  const stack = TechStack && TechStack.length > 0 ? TechStack : ["Dart", "Firebase", "Flutter"];
 
   return (
     <div className="group relative w-full max-w-xs sm:max-w-sm mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-[#12071f] via-[#1a092b] to-[#0a0015] border border-purple-500/20 shadow-[0_0_25px_rgba(168,85,247,0.25)] hover:shadow-[0_0_35px_rgba(168,85,247,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 backdrop-blur-md">
@@ -36,6 +38,18 @@ const CardProject = ({ Img, Title, Description, id, GithubLink }) => {
           <p className="text-gray-300/80 text-sm mt-2 leading-relaxed line-clamp-3">
             {Description || "No description provided."}
           </p>
+
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2 mt-3">
+            {stack.map((tech, index) => (
+              <span 
+                key={index}
+                className="px-2.5 py-1 text-[10px] font-medium text-purple-200 bg-purple-500/10 border border-purple-500/20 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.05)]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Action Buttons */}
