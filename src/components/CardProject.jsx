@@ -14,7 +14,7 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
 
   return (
     <div className="group relative w-full max-w-xs sm:max-w-sm mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-[#12071f] via-[#1a092b] to-[#0a0015] border border-purple-500/20 shadow-[0_0_25px_rgba(168,85,247,0.25)] hover:shadow-[0_0_35px_rgba(168,85,247,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 backdrop-blur-md">
-      
+
       {/* Image Section */}
       <div className="relative w-full h-44 sm:h-48 overflow-hidden">
         <img
@@ -42,7 +42,7 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
           {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mt-3">
             {stack.map((tech, index) => (
-              <span 
+              <span
                 key={index}
                 className="px-2.5 py-1 text-[10px] font-medium text-purple-200 bg-purple-500/10 border border-purple-500/20 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.05)]"
               >
