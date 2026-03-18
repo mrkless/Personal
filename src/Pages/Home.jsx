@@ -91,7 +91,7 @@ const TECH_STACK = ["React", "JavaScript", "Node.js", "Tailwind"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/mrkless" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/lester-bucag-29287737a" },
-  { icon: Instagram, link: "https://www.instagram.com/mrklester/" },
+  { icon: Instagram, link: "https://www.instagram.com/mrk.less/" },
 ];
 
 const CodeSnippet = memo(() => {
@@ -108,7 +108,7 @@ const CodeSnippet = memo(() => {
         clearInterval(typingInterval);
       }
     }, 50); // Faster typing speed
-    
+
     return () => clearInterval(typingInterval);
   }, []);
 
@@ -202,7 +202,7 @@ const Home = () => {
       <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <div className="container mx-auto min-h-screen flex items-center justify-center pt-20 pb-20 lg:pt-0 lg:pb-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
-            
+
             {/* Left Column */}
             <div className="space-y-6 sm:space-y-8 text-left lg:text-left order-1 w-full relative z-10" data-aos="fade-right" data-aos-delay="200">
               <StatusBadge />
@@ -218,8 +218,8 @@ const Home = () => {
 
               {/* Short Intro Paragraph */}
               <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light" data-aos="fade-up" data-aos-delay="1000">
-                Hi, I’m Mark Lester Bucag, a passionate IT graduate stepping into the world of full-stack development. 
-                I specialize in crafting minimal, performant, and deeply interactive web experiences with modern tech. 
+                Hi, I’m Mark Lester Bucag, a passionate IT graduate stepping into the world of full-stack development.
+                I specialize in crafting minimal, performant, and deeply interactive web experiences with modern tech.
                 Always learning, ever evolving.
               </p>
 
@@ -235,7 +235,7 @@ const Home = () => {
                 <div className="flex flex-wrap gap-4">
                   <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                   <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                  <CTAButton href="/resume.pdf" text="Resume" icon={ExternalLink} target="_blank" rel="noopener noreferrer" />
+                  <CTAButton href="/BucagMarkLester_Resume.pdf" text="Resume" icon={ExternalLink} target="_blank" rel="noopener noreferrer" />
                 </div>
                 <div className="flex gap-4 mt-2 sm:mt-0 hidden sm:flex">
                   {SOCIAL_LINKS.map((social, index) => (
@@ -256,7 +256,7 @@ const Home = () => {
               <div className="relative w-full max-w-lg lg:ml-auto">
                 {/* Background Glow */}
                 <div className={`absolute -inset-8 md:-inset-12 bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20 rounded-full blur-3xl transition-all duration-700 ease-in-out ${isHovering ? "opacity-70 scale-110" : "opacity-40 scale-100"}`}></div>
-                
+
                 <div className={`relative z-10 w-full transform transition-all duration-700 ease-out ${isHovering ? "scale-[1.03] -translate-y-2" : "scale-100 translate-y-0"}`}>
                   <div className={`transition-all duration-700 ${isHovering ? "rotate-1" : "-rotate-1"} mx-auto`}>
                     <CodeSnippet />

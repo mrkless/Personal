@@ -19,19 +19,19 @@ const socialLinks = [
     displayName: "Instagram",
     subText: "@lesexistence",
     icon: Instagram,
-    url: "https://www.instagram.com/lesexistence/",
+    url: "https://www.instagram.com/mrk.less/",
     color: "#E4405F",
     gradient: "from-[#833AB4] via-[#E4405F] to-[#FCAF45]",
   },
   {
-  name: "Facebook",
-  displayName: "Facebook",
-  subText: "@mrk.less",
-  icon: Facebook, // 👈 using Lucide's MessageCircle
-  url: "https://www.facebook.com/mrk.less", // 👈 replace with your Messenger link
-  color: "#2a74fdff",
-  gradient: "from-[#0084FF] to-[#00C6FF]",
-},
+    name: "Facebook",
+    displayName: "Facebook",
+    subText: "@mrk.less",
+    icon: Facebook, // 👈 using Lucide's MessageCircle
+    url: "https://www.facebook.com/mrk.less", // 👈 replace with your Messenger link
+    color: "#2a74fdff",
+    gradient: "from-[#0084FF] to-[#00C6FF]",
+  },
   {
     name: "GitHub",
     displayName: "Github",

@@ -80,11 +80,11 @@ const techStacks = [
   { icon: "reactjs.svg", language: "ReactJS" },
   { icon: "vite.svg", language: "Vite" },
   { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
+  { icon: "supabase.svg", language: "Supabase" },
   { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
+  { icon: "git.svg", language: "Git" },
   { icon: "dart.svg", language: "Dart" },
-  { icon: "php.svg", language: "PHP" },
+  { icon: "github.svg", language: "GitHub" },
 ];
 
 export default function FullWidthTabs() {
@@ -234,7 +234,7 @@ export default function FullWidthTabs() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
                 {displayedProjects.map((project, index) => (
                   <div key={project.id || index} data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
-                    <CardProject Img={project.img} Title={project.title} Description={project.description} id={project.id} />
+                    <CardProject Img={project.img} Title={project.title} Description={project.short_description || project.description} GithubLink={project.Github || project.GithubLink || project.link} TechStack={project.TechStack || project.techStack || project.tech_stack} id={project.id} />
                   </div>
                 ))}
               </div>
