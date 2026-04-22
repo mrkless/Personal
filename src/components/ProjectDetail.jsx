@@ -157,7 +157,7 @@ const ProjectDetails = () => {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-white text-sm md:text-base font-bold transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-[#030014]"
                 >
                   <Download className="w-4 h-4 md:w-5 md:h-5" />
-                  Download APK
+                  APK
                 </a>
               )}
             </div>
