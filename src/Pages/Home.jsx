@@ -235,7 +235,7 @@ const Home = () => {
                 <div className="flex flex-wrap gap-4">
                   <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
                   <CTAButton href="#Contact" text="Contact" icon={Mail} />
-                  <CTAButton href="/BucagMarkLester_Resume.pdf" text="Resume" icon={ExternalLink} target="_blank" rel="noopener noreferrer" />
+                  <CTAButton href="/MarkLester_Bucag_Resume.pdf" text="Resume" icon={ExternalLink} target="_blank" rel="noopener noreferrer" />
                 </div>
                 <div className="flex gap-4 mt-2 sm:mt-0 hidden sm:flex">
                   {SOCIAL_LINKS.map((social, index) => (
