@@ -68,7 +68,7 @@ const ProjectDetails = () => {
   const title = project.title || project.Title || "Untitled Project";
   const techStack = project.TechStack || project.techStack || project.tech_stack || ["React", "Tailwind", "Vite"];
   const githubLink = project.Github || project.GithubLink || project.link || "https://github.com/mrkless/CapstoneProject/tree/main#";
-  const isWebsite = String(id) === "2" || title.toLowerCase().includes("campus");
+  const isWebsite = project.type === 'website' || project.is_website || project.isWebsite || String(id) === "2" || title.toLowerCase().includes("campus");
   const demoLink = project.demo || project.live;
 
   const nextImage = () => setCurrentImage((prev) => (prev + 1) % images.length);
