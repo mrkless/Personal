@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Github, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, Github, ChevronLeft, ChevronRight, ExternalLink, Download } from "lucide-react";
 import { supabase } from "../supabase";
 
 const ProjectDetails = () => {
@@ -70,6 +70,7 @@ const ProjectDetails = () => {
   const githubLink = project.Github || project.GithubLink || project.link || "https://github.com/mrkless/CapstoneProject/tree/main#";
   const isWebsite = project.type === 'website' || project.is_website || project.isWebsite || String(id) === "2" || title.toLowerCase().includes("campus");
   const demoLink = project.demo || project.live;
+  const apkLink = project.apk;
 
   const nextImage = () => setCurrentImage((prev) => (prev + 1) % images.length);
   const prevImage = () => setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
@@ -145,6 +146,18 @@ const ProjectDetails = () => {
                 >
                   <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
                   Live Demo
+                </a>
+              )}
+
+              {apkLink && (
+                <a
+                  href={apkLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-white text-sm md:text-base font-bold transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-[#030014]"
+                >
+                  <Download className="w-4 h-4 md:w-5 md:h-5" />
+                  Download APK
                 </a>
               )}
             </div>
