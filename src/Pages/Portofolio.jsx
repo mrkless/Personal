@@ -233,7 +233,12 @@ export default function FullWidthTabs() {
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
                 {displayedProjects.map((project, index) => (
-                  <div key={project.id || index} data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}>
+                  <div 
+                    key={project.id || index} 
+                    className="h-full"
+                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"} 
+                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                  >
                     <CardProject Img={project.img} Title={project.title} Description={project.short_description || project.description} GithubLink={project.Github || project.GithubLink || project.link} TechStack={project.TechStack || project.techStack || project.tech_stack} id={project.id} />
                   </div>
                 ))}

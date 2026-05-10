@@ -13,10 +13,10 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
   const stack = TechStack && TechStack.length > 0 ? TechStack : ["Dart", "Firebase", "Flutter"];
 
   return (
-    <div className="group relative w-full max-w-xs sm:max-w-sm mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-[#12071f] via-[#1a092b] to-[#0a0015] border border-purple-500/20 shadow-[0_0_25px_rgba(168,85,247,0.25)] hover:shadow-[0_0_35px_rgba(168,85,247,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 backdrop-blur-md">
+    <div className="group relative w-full h-full max-w-xs sm:max-w-sm mx-auto rounded-2xl overflow-hidden bg-gradient-to-br from-[#12071f] via-[#1a092b] to-[#0a0015] border border-purple-500/20 shadow-[0_0_25px_rgba(168,85,247,0.25)] hover:shadow-[0_0_35px_rgba(168,85,247,0.4)] transition-all duration-500 ease-out hover:-translate-y-2 backdrop-blur-md flex flex-col">
 
       {/* Image Section */}
-      <div className="relative w-full h-44 sm:h-48 overflow-hidden">
+      <div className="relative w-full h-44 sm:h-48 overflow-hidden flex-shrink-0">
         <img
           src={Img}
           alt={Title || "Project Image"}
@@ -30,17 +30,17 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
       </div>
 
       {/* Info Section */}
-      <div className="relative p-4 sm:p-5 z-10 flex flex-col justify-between min-h-[180px]">
-        <div>
+      <div className="relative p-4 sm:p-5 z-10 flex flex-col flex-1">
+        <div className="flex-1">
           <h3 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-purple-300 via-pink-300 to-blue-300 bg-clip-text text-transparent tracking-wide line-clamp-1">
             {Title || "Untitled Project"}
           </h3>
-          <p className="text-gray-300/80 text-sm mt-2 leading-relaxed line-clamp-3">
+          <p className="text-gray-300/80 text-sm mt-2 leading-relaxed line-clamp-3 mb-4">
             {Description || "No description provided."}
           </p>
 
           {/* Tech Stack */}
-          <div className="flex flex-wrap gap-2 mt-3">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {stack.map((tech, index) => (
               <span
                 key={index}
@@ -53,7 +53,7 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-4 flex justify-between items-center">
+        <div className="mt-5 flex justify-between items-center">
           <a
             href={GithubLink || "https://github.com/mrkless/CapstoneProject/tree/main#"}
             target="_blank"
@@ -78,7 +78,7 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
       </div>
 
       {/* Glow Border Animation */}
-      <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-purple-400/40 transition-colors duration-500"></div>
+      <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-purple-400/40 pointer-events-none transition-colors duration-500"></div>
     </div>
   );
 };
