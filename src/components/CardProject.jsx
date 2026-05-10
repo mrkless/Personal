@@ -31,36 +31,29 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
 
       {/* Info Section */}
       <div className="relative p-4 sm:p-5 z-10 flex flex-col flex-1">
-        <div className="flex-1 flex flex-col">
-          {/* Title with fixed height to handle up to 2 lines */}
-          <div className="h-12 md:h-14 mb-1">
-            <h3 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-purple-300 via-pink-300 to-blue-300 bg-clip-text text-transparent tracking-wide line-clamp-2">
-              {Title || "Untitled Project"}
-            </h3>
-          </div>
+        <div className="flex-1">
+          <h3 className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-purple-300 via-pink-300 to-blue-300 bg-clip-text text-transparent tracking-wide line-clamp-1">
+            {Title || "Untitled Project"}
+          </h3>
+          <p className="text-gray-300/80 text-sm mt-2 leading-relaxed line-clamp-2">
+            {Description || "No description provided."}
+          </p>
+        </div>
 
-          {/* Description with fixed height for 3 lines */}
-          <div className="h-16 md:h-20 mb-4">
-            <p className="text-gray-300/80 text-sm leading-relaxed line-clamp-3">
-              {Description || "No description provided."}
-            </p>
-          </div>
-
-          {/* Tech Stack with fixed height for 2 rows of tags */}
-          <div className="flex flex-wrap gap-2 mt-auto h-20 md:h-24 overflow-hidden content-start">
-            {stack.map((tech, index) => (
-              <span
-                key={index}
-                className="px-2.5 py-1 text-[10px] font-medium text-purple-200 bg-purple-500/10 border border-purple-500/20 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.05)]"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mt-4 mb-4">
+          {stack.map((tech, index) => (
+            <span
+              key={index}
+              className="px-2.5 py-1 text-[10px] font-medium text-purple-200 bg-purple-500/10 border border-purple-500/20 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-5 flex justify-between items-center">
+        <div className="flex justify-between items-center mt-auto">
           <a
             href={GithubLink || "https://github.com/mrkless/CapstoneProject/tree/main#"}
             target="_blank"
