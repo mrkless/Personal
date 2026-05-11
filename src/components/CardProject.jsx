@@ -40,9 +40,9 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
           </p>
         </div>
 
-        {/* Tech Stack */}
+        {/* Tech Stack - Limited to 4 items to maintain one row */}
         <div className="flex flex-wrap gap-2 mt-4 mb-4">
-          {stack.map((tech, index) => (
+          {stack.slice(0, 4).map((tech, index) => (
             <span
               key={index}
               className="px-2.5 py-1 text-[10px] font-medium text-purple-200 bg-purple-500/10 border border-purple-500/20 rounded-full"
@@ -50,6 +50,11 @@ const CardProject = ({ Img, Title, Description, id, GithubLink, TechStack }) => 
               {tech}
             </span>
           ))}
+          {stack.length > 4 && (
+            <span className="px-2.5 py-1 text-[10px] font-medium text-purple-300/60 bg-white/5 border border-white/5 rounded-full">
+              +{stack.length - 4}
+            </span>
+          )}
         </div>
 
         {/* Action Buttons */}
